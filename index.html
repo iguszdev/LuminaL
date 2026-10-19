@@ -1,0 +1,185 @@
+<!doctype html>
+<html lang="pl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>LuminaL – Linux ze światłem</title>
+<style>
+:root{--bg:#fff6fb;--fg:#2a1240;--mut:#6b5585;--card:#ffffff;--line:#f0d4e8;--pk:#d62a8f;--pk2:#ff5fb8;--term:#150b33;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0a0620;--fg:#f3eaff;--mut:#b7a6d6;--card:#140b32;--line:#2b1b58;--pk:#ff5fb8;--pk2:#ff8fd0}}
+:root[data-theme="dark"]{--bg:#0a0620;--fg:#f3eaff;--mut:#b7a6d6;--card:#140b32;--line:#2b1b58;--pk:#ff5fb8;--pk2:#ff8fd0}
+html{scroll-padding-top:env(safe-area-inset-top,0px);scroll-behavior:smooth}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--fg);font:16px/1.65 system-ui,"Segoe UI",Roboto,sans-serif}
+a{color:inherit}
+.w{max-width:1040px;margin:0 auto;padding:0 20px}
+nav{display:flex;justify-content:space-between;align-items:center;padding:18px 0}
+nav b{letter-spacing:.25em;color:var(--pk)}
+nav a{margin-left:18px;text-decoration:none;color:var(--mut);font-size:.92rem}
+.hero{text-align:center;padding:48px 0 56px;background:radial-gradient(ellipse at 50% 0,rgba(255,95,184,.3),transparent 62%);position:relative;overflow:hidden}
+.hero svg{width:150px;height:150px;filter:drop-shadow(0 0 28px rgba(255,95,184,.7));animation:pulse 3s ease-in-out infinite}
+@keyframes pulse{50%{transform:scale(1.08);opacity:.85}}
+.tw{position:absolute;width:4px;height:4px;border-radius:50%;background:var(--pk2);animation:tw 2.6s ease-in-out infinite}
+@keyframes tw{50%{opacity:.1;transform:scale(.4)}}
+h1{font-size:clamp(2.6rem,10vw,5.2rem);letter-spacing:.1em;margin:10px 0 6px;line-height:1.1;background:linear-gradient(90deg,var(--pk),var(--pk2));-webkit-background-clip:text;background-clip:text;color:transparent}
+.lead{max-width:640px;margin:0 auto 26px;color:var(--mut);font-size:1.1rem}
+.btn{display:inline-block;padding:12px 26px;border-radius:999px;text-decoration:none;font-weight:600;margin:5px}
+.b1{background:linear-gradient(90deg,var(--pk),var(--pk2));color:#fff}
+.b2{border:1px solid var(--line);color:var(--fg)}
+.st{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin:34px 0 0}
+.st div{border:1px solid var(--line);background:var(--card);border-radius:14px;padding:14px}
+.st b{display:block;color:var(--pk);font-size:1.15rem}
+.st span{color:var(--mut);font-size:.85rem}
+section{padding:54px 0}
+h2{font-size:clamp(1.6rem,5vw,2.3rem);margin:0 0 8px}
+.sub{color:var(--mut);margin:0 0 26px;max-width:640px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:16px}
+.c{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:22px}
+.c i{font-style:normal;font-size:1.7rem}
+.c h3{margin:8px 0 4px}
+.c p{margin:0;color:var(--mut);font-size:.95rem}
+.t{background:var(--term);color:#f3eaff;border-radius:16px;border:1px solid var(--line);overflow:hidden;box-shadow:0 20px 60px rgba(255,95,184,.15)}
+.bar{padding:10px 14px;background:rgba(255,255,255,.06);display:flex;gap:7px;align-items:center;font-size:.8rem;color:#b7a6d6}
+.bar u{width:11px;height:11px;border-radius:50%;background:#ff5fb8;display:inline-block;text-decoration:none}
+.bar u:nth-child(2){background:#ffd36b}.bar u:nth-child(3){background:#8ee6a8}
+.tb{display:flex;flex-wrap:wrap;gap:22px;padding:18px;overflow-x:auto}
+pre{margin:0;font:13px/1.4 ui-monospace,Menlo,Consolas,monospace}
+.pk{color:#ff5fb8}.lt{color:#ff8fd0}.dm{color:#8f7db3}
+ol.s{list-style:none;padding:0;margin:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:16px;counter-reset:n}
+ol.s li{counter-increment:n;background:var(--card);border:1px solid var(--line);border-radius:18px;padding:22px;position:relative}
+ol.s li::before{content:counter(n);display:inline-grid;place-items:center;width:34px;height:34px;border-radius:50%;background:linear-gradient(135deg,var(--pk),var(--pk2));color:#fff;font-weight:700;margin-bottom:8px}
+code{font:.88em ui-monospace,Menlo,Consolas,monospace;background:rgba(255,95,184,.14);padding:2px 6px;border-radius:6px}
+.cmd{display:flex;gap:10px;align-items:center;justify-content:space-between;background:var(--term);color:#ff8fd0;border-radius:12px;padding:12px 16px;margin:14px 0;overflow-x:auto}
+.cmd code{background:none;color:inherit;white-space:nowrap}
+.cmd button{background:var(--pk);color:#fff;border:0;border-radius:8px;padding:6px 12px;cursor:pointer;font-weight:600}
+.chip{display:inline-block;padding:7px 16px;border:1px solid var(--line);border-radius:999px;margin:4px;background:var(--card)}
+.chip.on{border-color:var(--pk);color:var(--pk);font-weight:600}
+table{width:100%;border-collapse:collapse;background:var(--card);border:1px solid var(--line);border-radius:14px;overflow:hidden}
+td{padding:11px 16px;border-bottom:1px solid var(--line);font-size:.95rem}
+td:first-child{color:var(--pk);font-weight:600;width:34%}
+tr:last-child td{border:0}
+.tbl{overflow-x:auto}
+details{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:14px 18px;margin-bottom:10px}
+summary{cursor:pointer;font-weight:600}
+details p{color:var(--mut);margin:8px 0 0}
+footer{text-align:center;color:var(--mut);padding:36px 0 28px;border-top:1px solid var(--line);font-size:.9rem}
+</style>
+</head>
+<body>
+<div class="w">
+<nav><b>LUMINAL</b><div><a href="#funkcje">Funkcje</a><a href="#pulpity">Pulpity</a><a href="#pobierz">Pobierz</a><a href="#build">Zbuduj</a><a href="#faq">FAQ</a></div></nav>
+</div>
+
+<header class="hero">
+<span class="tw" style="left:12%;top:20%"></span><span class="tw" style="left:84%;top:16%;animation-delay:.8s"></span><span class="tw" style="left:22%;top:64%;animation-delay:1.4s"></span><span class="tw" style="left:76%;top:58%;animation-delay:.3s"></span><span class="tw" style="left:50%;top:8%;animation-delay:2s"></span>
+<div class="w">
+<svg viewBox="0 0 200 200" aria-hidden="true"><polygon fill="#ff5fb8" stroke="#ffd0ec" stroke-width="3" stroke-linejoin="round" points="100,30 115.9,78.2 166.6,78.4 125.7,108.3 141.1,156.6 100,127 58.9,156.6 74.3,108.3 33.4,78.4 84.1,78.2"/></svg>
+<h1>LuminaL</h1>
+<p class="lead">Światło dla Twojego terminala. Czysta, lekka dystrybucja oparta na Debianie 12: startuje w trybie tekstowym, ma własny instalator, animację z różową gwiazdą i wybór pulpitu.</p>
+<a class="btn b1" href="https://drive.google.com/file/d/1d0qGKaIfpkQnAn1fyuU6ooyDHmElMima/view?usp=drive_link" target="_blank">Pobierz z Google Drive</a><a class="btn b2" href="#build">Zbuduj sam</a>
+<div class="st"><div><b>Debian 12</b><span>baza „bookworm”</span></div><div><b>BIOS + UEFI</b><span>jeden obraz hybrydowy</span></div><div><b>Instalator CLI</b><span>działa offline</span></div><div><b>v1.1</b><span>dual-boot i wybór pulpitu</span></div></div>
+</div>
+</header>
+
+<section id="funkcje"><div class="w">
+<h2>Wszystko, czego potrzeba. Nic ponad to.</h2>
+<p class="sub">LuminaL jest szybki i czytelny, a jednocześnie ma charakter, którego nie znajdziesz w zwykłej dystrybucji.</p>
+<div class="grid">
+<div class="c"><i>⌨️</i><h3>Start w CLI</h3><p>System budzi się w terminalu z kolorowym promptem. Pulpit uruchamiasz, kiedy go potrzebujesz: <code>startx</code>.</p></div>
+<div class="c"><i>🌟</i><h3>Animacja startowa</h3><p>Podczas bootowania pulsuje różowa gwiazda (Plymouth), a po zalogowaniu rośnie ona linia po linii w terminalu.</p></div>
+<div class="c"><i>📋</i><h3>LuminaFetch</h3><p>Własny odpowiednik neofetcha z gwiazdą ASCII i pełnym info: CPU, GPU, RAM, dysk, IP, tryb rozruchu.</p></div>
+<div class="c"><i>💿</i><h3>Instalator CLI</h3><p><code>luminal-install</code> w różowym motywie. Kopiuje system z obrazu live, więc nie potrzebuje internetu.</p></div>
+<div class="c"><i>🪟</i><h3>Dual-boot</h3><p>Zainstaluj obok Windowsa lub innego Linuksa. GRUB wykrywa inne systemy automatycznie (os-prober).</p></div>
+<div class="c"><i>🖥️</i><h3>Wybór pulpitu</h3><p>Podczas instalacji wybierasz środowisko: tylko CLI, XFCE, i3, Openbox, MATE, KDE Plasma lub GNOME.</p></div>
+</div></div></section>
+
+<section><div class="w">
+<h2>Tak wygląda LuminaFetch</h2>
+<p class="sub">Jedno polecenie, cały obraz systemu.</p>
+<div class="t"><div class="bar"><u></u><u></u><u></u>&nbsp; luminal – tty1</div>
+<div class="tb">
+<pre class="pk">                 *
+                ***
+               *****
+      *************************
+        *********************
+           *****************
+             *************
+            *****     *****
+           ****         ****
+          ***             ***</pre>
+<pre><span class="pk">ignus</span>@<span class="pk">luminal</span>
+<span class="dm">-------------------------------</span>
+<span class="lt">OS</span>        LuminaL 1.1 (Debian 12)
+<span class="lt">Kernel</span>    6.1.0 (x86_64)
+<span class="lt">Pakiety</span>   612 (dpkg)
+<span class="lt">Powłoka</span>   bash
+<span class="lt">Pulpit</span>    i3
+<span class="lt">CPU</span>       Ryzen 5 (12 rdzeni)
+<span class="lt">RAM</span>       412 / 15890 MiB
+<span class="lt">Boot</span>      UEFI</pre>
+</div></div>
+</div></section>
+
+<section id="pulpity"><div class="w">
+<h2>Wybierz własny pulpit</h2>
+<p class="sub">Instalator pyta o środowisko. XFCE i i3 są w obrazie, więc działają bez internetu. Pozostałe doinstalują się z repozytorium Debiana.</p>
+<span class="chip">Tylko CLI</span><span class="chip on">XFCE · offline</span><span class="chip on">i3 · offline</span><span class="chip">Openbox</span><span class="chip">MATE</span><span class="chip">KDE Plasma</span><span class="chip">GNOME</span>
+<p class="sub" style="margin-top:16px">Możesz też włączyć ekran logowania LightDM, żeby pulpit startował od razu po uruchomieniu komputera.</p>
+</div></section>
+
+<section id="pobierz"><div class="w">
+<h2>Pobierz obraz ISO</h2>
+<p class="sub">Pobierz gotowy obraz systemu bezpośrednio z Google Drive, a następnie nagraj go na pendrive.</p>
+<div style="margin: 20px 0;"><a class="btn b1" href="https://drive.google.com/file/d/1d0qGKaIfpkQnAn1fyuU6ooyDHmElMima/view?usp=drive_link" target="_blank">Pobierz ISO (Google Drive)</a></div>
+<p class="sub" style="margin-top:20px">Po pobraniu pliku ISO użyj poniższego polecenia w terminalu, aby nagrać go na pendrive:</p>
+<div class="cmd"><code>sudo dd if=luminal-amd64.hybrid.iso of=/dev/sdX bs=4M status=progress conv=fsync</code><button data-copy="sudo dd if=luminal-amd64.hybrid.iso of=/dev/sdX bs=4M status=progress conv=fsync">Kopiuj</button></div>
+<p class="sub">Podmień <code>/dev/sdX</code> na swojego pendrive'a (całe urządzenie, bez numeru partycji).</p>
+</div></section>
+
+<section><div class="w">
+<h2>Instalacja w czterech krokach</h2>
+<p class="sub">Od pobrania obrazu do działającego systemu w kilka minut.</p>
+<ol class="s">
+<li><b>Pobierz ISO</b><br><span style="color:var(--mut)">Pobierz plik ISO bezpośrednio z Google Drive.</span></li>
+<li><b>Nagraj na USB</b><br><span style="color:var(--mut)">Zapisz obraz na pendrive (4 GB+) przez <code>dd</code>, Rufusa lub Etchera.</span></li>
+<li><b>Uruchom z USB</b><br><span style="color:var(--mut)">Wyłącz Secure Boot, wybierz pendrive z menu rozruchu i obejrzyj gwiazdę.</span></li>
+<li><b>Wpisz instalator</b><br><span style="color:var(--mut)"><code>sudo luminal-install</code> i wybierz dysk, tryb (cały dysk lub dual-boot), pulpit.</span></li>
+</ol>
+</div></section>
+
+<section id="build"><div class="w">
+<h2>Zbuduj LuminaL sam</h2>
+<p class="sub">Alternatywnie, możesz zbudować obraz samodzielnie jednym skryptem na Debianie lub Ubuntu (ok. 15 GB miejsca, 20–40 minut).</p>
+<div class="cmd"><code>bash ~/build-luminal.sh</code><button data-copy="bash ~/build-luminal.sh">Kopiuj</button></div>
+</div></section>
+
+<section><div class="w">
+<h2>Specyfikacja</h2><br>
+<div class="tbl"><table>
+<tr><td>Baza</td><td>Debian 12 „bookworm”</td></tr>
+<tr><td>Architektura</td><td>amd64, obraz iso-hybrid (BIOS i UEFI)</td></tr>
+<tr><td>Źródło obrazu</td><td>Google Drive</td></tr>
+<tr><td>Tryb domyślny</td><td>Tekstowy (multi-user.target)</td></tr>
+<tr><td>Boot</td><td>GRUB / syslinux z menu w różowej stylizacji, animacja Plymouth</td></tr>
+<tr><td>Instalator</td><td>luminal-install (whiptail), ext4, GRUB, tryby: cały dysk / dual-boot</td></tr>
+<tr><td>Pulpity</td><td>XFCE, i3 (w obrazie); Openbox, MATE, KDE, GNOME (online)</td></tr>
+<tr><td>Narzędzia</td><td>git, curl, wget, htop, nano, rsync, NetworkManager</td></tr>
+<tr><td>Konto live</td><td>luminal / luminal</td></tr>
+</table></div>
+</div></section>
+
+<section id="faq"><div class="w">
+<h2>Pytania</h2><br>
+<details><summary>Czy potrzebuję internetu do instalacji?</summary><p>Nie, jeśli wybierzesz CLI, XFCE albo i3. Pozostałe pulpity pobierają pakiety z repozytorium Debiana.</p></details>
+<details><summary>Czy instalator może zostawić mój Windows?</summary><p>Tak, w trybie dual-boot.</p></details>
+<details><summary>Działa z Secure Boot?</summary><p>Nie. Bootloader nie jest podpisany, więc Secure Boot trzeba wyłączyć w ustawieniach UEFI.</p></details>
+<details><summary>Czy to gotowy produkt?</summary><p>To projekt hobbystyczny. Przetestuj go najpierw w QEMU lub na zapasowym dysku, zanim zainstalujesz na głównym komputerze.</p></details>
+</div></section>
+
+<footer><div class="w">LuminaL 1.1 · zbudowany na Debianie · ⭐ Light for your terminal</div></footer>
+<script>
+document.querySelectorAll('[data-copy]').forEach(function(b){b.onclick=async function(){try{await navigator.clipboard.writeText(b.dataset.copy);b.textContent='Skopiowano ✓';setTimeout(function(){b.textContent='Kopiuj'},1500)}catch(e){}}});
+</script>
+</body>
+</html>

@@ -1,9 +1,9 @@
 <!doctype html>
-<html lang="pl">
+<html lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>LuminaL – Linux ze światłem</title>
+<title>LuminaL – Light for your terminal</title>
 <style>
 :root{--bg:#fff6fb;--fg:#2a1240;--mut:#6b5585;--card:#ffffff;--line:#f0d4e8;--pk:#d62a8f;--pk2:#ff5fb8;--term:#150b33;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
 @media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0a0620;--fg:#f3eaff;--mut:#b7a6d6;--card:#140b32;--line:#2b1b58;--pk:#ff5fb8;--pk2:#ff8fd0}}
@@ -67,7 +67,7 @@ footer{text-align:center;color:var(--mut);padding:36px 0 28px;border-top:1px sol
 </head>
 <body>
 <div class="w">
-<nav><b>LUMINAL</b><div><a href="#funkcje">Funkcje</a><a href="#pulpity">Pulpity</a><a href="#pobierz">Pobierz</a><a href="#build">Zbuduj</a><a href="#faq">FAQ</a></div></nav>
+<nav><b>LUMINAL</b><div><a href="#features">Features</a><a href="#desktops">Desktops</a><a href="#download">Download</a><a href="#build">Build</a><a href="#faq">FAQ</a></div></nav>
 </div>
 
 <header class="hero">
@@ -75,27 +75,27 @@ footer{text-align:center;color:var(--mut);padding:36px 0 28px;border-top:1px sol
 <div class="w">
 <svg viewBox="0 0 200 200" aria-hidden="true"><polygon fill="#ff5fb8" stroke="#ffd0ec" stroke-width="3" stroke-linejoin="round" points="100,30 115.9,78.2 166.6,78.4 125.7,108.3 141.1,156.6 100,127 58.9,156.6 74.3,108.3 33.4,78.4 84.1,78.2"/></svg>
 <h1>LuminaL</h1>
-<p class="lead">Światło dla Twojego terminala. Czysta, lekka dystrybucja oparta na Debianie 12: startuje w trybie tekstowym, ma własny instalator, animację z różową gwiazdą i wybór pulpitu.</p>
-<a class="btn b1" href="https://drive.google.com/file/d/1d0qGKaIfpkQnAn1fyuU6ooyDHmElMima/view?usp=drive_link" target="_blank">Pobierz z Google Drive</a><a class="btn b2" href="#build">Zbuduj sam</a>
-<div class="st"><div><b>Debian 12</b><span>baza „bookworm”</span></div><div><b>BIOS + UEFI</b><span>jeden obraz hybrydowy</span></div><div><b>Instalator CLI</b><span>działa offline</span></div><div><b>v1.1</b><span>dual-boot i wybór pulpitu</span></div></div>
+<p class="lead">Light for your terminal. A clean, lightweight distribution based on Debian 12: boots into text mode, features a custom installer, a pink star animation, and desktop selection.</p>
+<a class="btn b1" href="https://drive.google.com/file/d/1d0qGKaIfpkQnAn1fyuU6ooyDHmElMima/view?usp=drive_link" target="_blank">Download from Google Drive</a><a class="btn b2" href="#build">Build yourself</a>
+<div class="st"><div><b>Debian 12</b><span>"bookworm" base</span></div><div><b>BIOS + UEFI</b><span>single hybrid image</span></div><div><b>CLI Installer</b><span>works completely offline</span></div><div><b>v1.1</b><span>dual-boot & desktop choice</span></div></div>
 </div>
 </header>
 
-<section id="funkcje"><div class="w">
-<h2>Wszystko, czego potrzeba. Nic ponad to.</h2>
-<p class="sub">LuminaL jest szybki i czytelny, a jednocześnie ma charakter, którego nie znajdziesz w zwykłej dystrybucji.</p>
+<section id="features"><div class="w">
+<h2>Everything you need. Nothing more.</h2>
+<p class="sub">LuminaL is fast and clean, yet possesses a unique character you won't find in a standard distribution.</p>
 <div class="grid">
-<div class="c"><i>⌨️</i><h3>Start w CLI</h3><p>System budzi się w terminalu z kolorowym promptem. Pulpit uruchamiasz, kiedy go potrzebujesz: <code>startx</code>.</p></div>
-<div class="c"><i>🌟</i><h3>Animacja startowa</h3><p>Podczas bootowania pulsuje różowa gwiazda (Plymouth), a po zalogowaniu rośnie ona linia po linii w terminalu.</p></div>
-<div class="c"><i>📋</i><h3>LuminaFetch</h3><p>Własny odpowiednik neofetcha z gwiazdą ASCII i pełnym info: CPU, GPU, RAM, dysk, IP, tryb rozruchu.</p></div>
-<div class="c"><i>💿</i><h3>Instalator CLI</h3><p><code>luminal-install</code> w różowym motywie. Kopiuje system z obrazu live, więc nie potrzebuje internetu.</p></div>
-<div class="c"><i>🪟</i><h3>Dual-boot</h3><p>Zainstaluj obok Windowsa lub innego Linuksa. GRUB wykrywa inne systemy automatycznie (os-prober).</p></div>
-<div class="c"><i>🖥️</i><h3>Wybór pulpitu</h3><p>Podczas instalacji wybierasz środowisko: tylko CLI, XFCE, i3, Openbox, MATE, KDE Plasma lub GNOME.</p></div>
+<div class="c"><i>⌨️</i><h3>CLI Boot</h3><p>The system wakes up in a terminal with a colorful prompt. Launch the desktop whenever you need it: <code>startx</code>.</p></div>
+<div class="c"><i>🌟</i><h3>Boot Animation</h3><p>A pink star pulses during boot (Plymouth), and after logging in, it grows line by line right in the terminal.</p></div>
+<div class="c"><i>📋</i><h3>LuminaFetch</h3><p>A custom neofetch equivalent with an ASCII star and full info: CPU, GPU, RAM, disk, IP, boot mode.</p></div>
+<div class="c"><i>💿</i><h3>CLI Installer</h3><p><code>luminal-install</code> in a pink theme. Copies the system from the live image, requiring no internet connection.</p></div>
+<div class="c"><i>🪟</i><h3>Dual-boot</h3><p>Install alongside Windows or another Linux. GRUB detects other operating systems automatically (os-prober).</p></div>
+<div class="c"><i>🖥️</i><h3>Desktop Selection</h3><p>During installation, choose your environment: CLI-only, XFCE, i3, Openbox, MATE, KDE Plasma, or GNOME.</p></div>
 </div></div></section>
 
 <section><div class="w">
-<h2>Tak wygląda LuminaFetch</h2>
-<p class="sub">Jedno polecenie, cały obraz systemu.</p>
+<h2>This is LuminaFetch</h2>
+<p class="sub">One command, the entire system picture.</p>
 <div class="t"><div class="bar"><u></u><u></u><u></u>&nbsp; luminal – tty1</div>
 <div class="tb">
 <pre class="pk">                 *
@@ -112,75 +112,75 @@ footer{text-align:center;color:var(--mut);padding:36px 0 28px;border-top:1px sol
 <span class="dm">-------------------------------</span>
 <span class="lt">OS</span>        LuminaL 1.1 (Debian 12)
 <span class="lt">Kernel</span>    6.1.0 (x86_64)
-<span class="lt">Pakiety</span>   612 (dpkg)
-<span class="lt">Powłoka</span>   bash
-<span class="lt">Pulpit</span>    i3
-<span class="lt">CPU</span>       Ryzen 5 (12 rdzeni)
-<span class="lt">RAM</span>       412 / 15890 MiB
-<span class="lt">Boot</span>      UEFI</pre>
+<span class="lt">Packages</span> 612 (dpkg)
+<span class="lt">Shell</span>    bash
+<span class="lt">Desktop</span>  i3
+<span class="lt">CPU</span>      Ryzen 5 (12 cores)
+<span class="lt">RAM</span>      412 / 15890 MiB
+<span class="lt">Boot</span>     UEFI</pre>
 </div></div>
 </div></section>
 
-<section id="pulpity"><div class="w">
-<h2>Wybierz własny pulpit</h2>
-<p class="sub">Instalator pyta o środowisko. XFCE i i3 są w obrazie, więc działają bez internetu. Pozostałe doinstalują się z repozytorium Debiana.</p>
-<span class="chip">Tylko CLI</span><span class="chip on">XFCE · offline</span><span class="chip on">i3 · offline</span><span class="chip">Openbox</span><span class="chip">MATE</span><span class="chip">KDE Plasma</span><span class="chip">GNOME</span>
-<p class="sub" style="margin-top:16px">Możesz też włączyć ekran logowania LightDM, żeby pulpit startował od razu po uruchomieniu komputera.</p>
+<section id="desktops"><div class="w">
+<h2>Choose your desktop</h2>
+<p class="sub">The installer asks for your environment. XFCE and i3 are included in the image, working offline. Others will be installed from the Debian repository.</p>
+<span class="chip">CLI-only</span><span class="chip on">XFCE · offline</span><span class="chip on">i3 · offline</span><span class="chip">Openbox</span><span class="chip">MATE</span><span class="chip">KDE Plasma</span><span class="chip">GNOME</span>
+<p class="sub" style="margin-top:16px">You can also enable the LightDM login screen so the desktop starts immediately upon computer startup.</p>
 </div></section>
 
-<section id="pobierz"><div class="w">
-<h2>Pobierz obraz ISO</h2>
-<p class="sub">Pobierz gotowy obraz systemu bezpośrednio z Google Drive, a następnie nagraj go na pendrive.</p>
-<div style="margin: 20px 0;"><a class="btn b1" href="https://drive.google.com/file/d/1d0qGKaIfpkQnAn1fyuU6ooyDHmElMima/view?usp=drive_link" target="_blank">Pobierz ISO (Google Drive)</a></div>
-<p class="sub" style="margin-top:20px">Po pobraniu pliku ISO użyj poniższego polecenia w terminalu, aby nagrać go na pendrive:</p>
-<div class="cmd"><code>sudo dd if=luminal-amd64.hybrid.iso of=/dev/sdX bs=4M status=progress conv=fsync</code><button data-copy="sudo dd if=luminal-amd64.hybrid.iso of=/dev/sdX bs=4M status=progress conv=fsync">Kopiuj</button></div>
-<p class="sub">Podmień <code>/dev/sdX</code> na swojego pendrive'a (całe urządzenie, bez numeru partycji).</p>
+<section id="download"><div class="w">
+<h2>Download ISO image</h2>
+<p class="sub">Download the ready-to-use system image directly from Google Drive, then write it to a USB flash drive.</p>
+<div style="margin: 20px 0;"><a class="btn b1" href="https://drive.google.com/file/d/1d0qGKaIfpkQnAn1fyuU6ooyDHmElMima/view?usp=drive_link" target="_blank">Download ISO (Google Drive)</a></div>
+<p class="sub" style="margin-top:20px">After downloading the ISO file, use the following terminal command to write it to your USB drive:</p>
+<div class="cmd"><code>sudo dd if=luminal-amd64.hybrid.iso of=/dev/sdX bs=4M status=progress conv=fsync</code><button data-copy="sudo dd if=luminal-amd64.hybrid.iso of=/dev/sdX bs=4M status=progress conv=fsync">Copy</button></div>
+<p class="sub">Replace <code>/dev/sdX</code> with your USB drive (the whole device, without partition numbers).</p>
 </div></section>
 
 <section><div class="w">
-<h2>Instalacja w czterech krokach</h2>
-<p class="sub">Od pobrania obrazu do działającego systemu w kilka minut.</p>
+<h2>Installation in four steps</h2>
+<p class="sub">From downloading the image to a working system in just a few minutes.</p>
 <ol class="s">
-<li><b>Pobierz ISO</b><br><span style="color:var(--mut)">Pobierz plik ISO bezpośrednio z Google Drive.</span></li>
-<li><b>Nagraj na USB</b><br><span style="color:var(--mut)">Zapisz obraz na pendrive (4 GB+) przez <code>dd</code>, Rufusa lub Etchera.</span></li>
-<li><b>Uruchom z USB</b><br><span style="color:var(--mut)">Wyłącz Secure Boot, wybierz pendrive z menu rozruchu i obejrzyj gwiazdę.</span></li>
-<li><b>Wpisz instalator</b><br><span style="color:var(--mut)"><code>sudo luminal-install</code> i wybierz dysk, tryb (cały dysk lub dual-boot), pulpit.</span></li>
+<li><b>Download ISO</b><br><span style="color:var(--mut)">Get the ISO file directly from Google Drive.</span></li>
+<li><b>Write to USB</b><br><span style="color:var(--mut)">Save the image to a USB flash drive (4 GB+) via <code>dd</code>, Rufus, or Etcher.</span></li>
+<li><b>Boot from USB</b><br><span style="color:var(--mut)">Disable Secure Boot, select the USB drive from your boot menu, and watch the star.</span></li>
+<li><b>Run Installer</b><br><span style="color:var(--mut)">Type <code>sudo luminal-install</code>, choose your disk, mode (entire disk or dual-boot), and desktop.</span></li>
 </ol>
 </div></section>
 
 <section id="build"><div class="w">
-<h2>Zbuduj LuminaL sam</h2>
-<p class="sub">Alternatywnie, możesz zbudować obraz samodzielnie jednym skryptem na Debianie lub Ubuntu (ok. 15 GB miejsca, 20–40 minut).</p>
-<div style="margin: 15px 0;"><a class="btn b2" href="https://drive.google.com/drive/folders/11i0LZ0wpsAxp7Pw5wvETP_wGsY3eqskZ?usp=sharing" target="_blank">Kod źródłowy (Google Drive)</a></div>
-<div class="cmd"><code>bash ~/build-luminal.sh</code><button data-copy="bash ~/build-luminal.sh">Kopiuj</button></div>
+<h2>Build LuminaL yourself</h2>
+<p class="sub">Alternatively, you can build the image yourself using a single script on Debian or Ubuntu (approx. 15 GB space required, 20–40 minutes).</p>
+<div style="margin: 15px 0;"><a class="btn b2" href="https://drive.google.com/drive/folders/11i0LZ0wpsAxp7Pw5wvETP_wGsY3eqskZ?usp=sharing" target="_blank">Source Code (Google Drive)</a></div>
+<div class="cmd"><code>bash ~/build-luminal.sh</code><button data-copy="bash ~/build-luminal.sh">Copy</button></div>
 </div></section>
 
 <section><div class="w">
-<h2>Specyfikacja</h2><br>
+<h2>Specification</h2><br>
 <div class="tbl"><table>
-<tr><td>Baza</td><td>Debian 12 „bookworm”</td></tr>
-<tr><td>Architektura</td><td>amd64, obraz iso-hybrid (BIOS i UEFI)</td></tr>
-<tr><td>Źródło obrazu</td><td>Google Drive</td></tr>
-<tr><td>Tryb domyślny</td><td>Tekstowy (multi-user.target)</td></tr>
-<tr><td>Boot</td><td>GRUB / syslinux z menu w różowej stylizacji, animacja Plymouth</td></tr>
-<tr><td>Instalator</td><td>luminal-install (whiptail), ext4, GRUB, tryby: cały dysk / dual-boot</td></tr>
-<tr><td>Pulpity</td><td>XFCE, i3 (w obrazie); Openbox, MATE, KDE, GNOME (online)</td></tr>
-<tr><td>Narzędzia</td><td>git, curl, wget, htop, nano, rsync, NetworkManager</td></tr>
-<tr><td>Konto live</td><td>luminal / luminal</td></tr>
+<tr><td>Base</td><td>Debian 12 "bookworm"</td></tr>
+<tr><td>Architecture</td><td>amd64, iso-hybrid image (BIOS and UEFI)</td></tr>
+<tr><td>Image Source</td><td>Google Drive</td></tr>
+<tr><td>Default Mode</td><td>Text mode (multi-user.target)</td></tr>
+<tr><td>Bootloader</td><td>GRUB / syslinux with pink-themed menu, Plymouth animation</td></tr>
+<tr><td>Installer</td><td>luminal-install (whiptail), ext4, GRUB, modes: full disk / dual-boot</td></tr>
+<tr><td>Desktops</td><td>XFCE, i3 (in image); Openbox, MATE, KDE, GNOME (online)</td></tr>
+<tr><td>Tools</td><td>git, curl, wget, htop, nano, rsync, NetworkManager</td></tr>
+<tr><td>Live Account</td><td>luminal / luminal</td></tr>
 </table></div>
 </div></section>
 
 <section id="faq"><div class="w">
-<h2>Pytania</h2><br>
-<details><summary>Czy potrzebuję internetu do instalacji?</summary><p>Nie, jeśli wybierzesz CLI, XFCE albo i3. Pozostałe pulpity pobierają pakiety z repozytorium Debiana.</p></details>
-<details><summary>Czy instalator może zostawić mój Windows?</summary><p>Tak, w trybie dual-boot.</p></details>
-<details><summary>Działa z Secure Boot?</summary><p>Nie. Bootloader nie jest podpisany, więc Secure Boot trzeba wyłączyć w ustawieniach UEFI.</p></details>
-<details><summary>Czy to gotowy produkt?</summary><p>To projekt hobbystyczny. Przetestuj go najpierw w QEMU lub na zapasowym dysku, zanim zainstalujesz na głównym komputerze.</p></details>
+<h2>FAQ</h2><br>
+<details><summary>Do I need an internet connection for installation?</summary><p>No, if you choose CLI, XFCE, or i3. Other desktops download packages from the official Debian repositories.</p></details>
+<details><summary>Can the installer keep my Windows partition?</summary><p>Yes, by using the dual-boot mode.</p></details>
+<details><summary>Does it work with Secure Boot?</summary><p>No. The bootloader is unsigned, so Secure Boot must be disabled in your UEFI/BIOS settings.</p></details>
+<details><summary>Is this a production-ready product?</summary><p>It is a hobby project. Please test it first in QEMU or on a spare drive before installing it on your main computer.</p></details>
 </div></section>
 
-<footer><div class="w">LuminaL 1.1 · zbudowany na Debianie · ⭐ Light for your terminal</div></footer>
+<footer><div class="w">LuminaL 1.1 · built on Debian · ⭐ Light for your terminal</div></footer>
 <script>
-document.querySelectorAll('[data-copy]').forEach(function(b){b.onclick=async function(){try{await navigator.clipboard.writeText(b.dataset.copy);b.textContent='Skopiowano ✓';setTimeout(function(){b.textContent='Kopiuj'},1500)}catch(e){}}});
+document.querySelectorAll('[data-copy]').forEach(function(b){b.onclick=async function(){try{await navigator.clipboard.writeText(b.dataset.copy);b.textContent='Copied ✓';setTimeout(function(){b.textContent='Copy'},1500)}catch(e){}}});
 </script>
 </body>
 </html>
